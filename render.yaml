@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: n8n-workflow
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    region: oregon
+    envVariables:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true" 
+      - key: N8N_BASIC_AUTH_USER
+        value: "numanasghar901@gmail.com" 
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: "Workflow@123" 
+      - key: N8N_ENCRYPTION_KEY
+        value: "5kUHvb9n7Yruhp92DhAT7mi9" 
