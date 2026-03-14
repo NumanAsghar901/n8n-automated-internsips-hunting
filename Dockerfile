@@ -1,11 +1,10 @@
-# Use the official n8n Docker image
-FROM n8nio/n8n:latest
+FROM node:18-alpine
 
-# Set environment variable for n8n
+RUN npm install -g n8n
+
 ENV N8N_PORT=5678
+ENV PORT=5678
 
-# Expose the default n8n port
 EXPOSE 5678
 
-# Start n8n using the full path
-CMD ["n8n", "start"]
+CMD ["npx", "n8n", "start"]
